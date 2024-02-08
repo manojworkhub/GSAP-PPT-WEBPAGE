@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script><!-- this CDN is for normal GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>  <!-- this CDN is for scrollTrigger -->
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+
+body { 
+  font-family: "Signika Negative", sans-serif; 
+  font-weight: 300;
+  margin: 0;
+  padding: 0 20px;
+}
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    top: 400px;
+}
+.red{
+    background-color: red;
+    border-radius: 50%;
+}
+#s1{
+    height: 617px;
+    background-color: pink;
+}
+#s2{
+    height: 617vh;
+    background-color: rgb(192, 255, 249);
+}
+h1{
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+   
+}
+
+    </style>
+</head>
+<body>
+    <section id="s1">
+          <h1>section one</h1>
+    </section>
+    <section id="s2">
+        
+        <div class="box1"></div>
+        <h1>section two</h1>
+    </section>
+ 
+      
+</body>
+<script>
+gsap.to('.box1', {
+  x: 200, 
+  
+  scrollTrigger: {
+    trigger: '.box1',
+    start: 'top 35%',
+    end: 'center 20%',
+    markers:true,
+    toggleClass:"red",
+    
+    scrub: true
+  }
+});
+
+
+</script>
+</html>

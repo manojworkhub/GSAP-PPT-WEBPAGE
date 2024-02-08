@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOLS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Mochiy+Pop+One&display=swap');
+
+        body {
+            background: #2DB54D;
+            background: linear-gradient(to left, #2DB54D 22%, #3A9950 35%, #000000 90%);
+        }
+
+        * {
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .home {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0 0 0;
+        }
+
+        .home a {
+            font-family: 'Mochiy Pop One', sans-serif;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        .title{
+            background: #CFCFCF;
+            background: linear-gradient(to right, #CFCFCF 0%, #00ff37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Mochiy Pop One', sans-serif;
+            font-size: 3rem;
+            width: 500px;
+            height: 60px;
+            position: absolute;
+            top: 100px;
+            left: 580px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 25px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            box-shadow: inset 0px 0px 11px 1px rgba(172, 158, 158, 1);
+        }
+
+        .box a {
+            font-family: 'Mochiy Pop One', sans-serif;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+           
+
+        }
+
+        .base {
+            height: 500px;
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box::before {
+            position: absolute;
+            content: "";
+            width: 205px;
+            height: 205px;
+            background-color: red;
+            border-radius: 25px;
+            z-index: -11;
+            display: none;
+            animation: neno 5s linear infinite;
+        }
+
+        .box:hover::before {
+            display: block;
+        }
+
+        .box:hover a {
+            display: block;
+            background: #CFCFCF;
+            background: linear-gradient(to right, #CFCFCF 0%, #00FF09 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Mochiy Pop One', sans-serif;
+            font-size: 2rem;
+            transition: all 1s linear;
+
+        }
+
+        @keyframes neno {
+            50% {
+                filter: hue-rotate(350deg);
+            }
+        }
+
+        .demo {
+            font-size: 1.25rem;
+            text-align: center;
+            width: 900px;
+            position: absolute;
+            left: 200px;
+            bottom: 60px;
+            color: white;
+            text-shadow: 0px 0px 11px rgb(101, 101, 101);
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="home"><a href="../index.html">GSAP</a></div>
+    </header>
+    <div class="title">TOOLS</div>
+    <section>
+        <div class="base">
+            <div class="box" id="core"><a href="../core/core.html">CORE</a></div>
+            <div class="box" id="scroll"><a href="../scroll/scroll.html">SCROLL</a></div>
+            <div class="box" id="svg"><a href="   ">SVG</a></div>
+            <div class="box" id="ui"><a href="   ">UI</a></div>
+            <div class="box" id="text"><a href="   ">TEXT</a></div>
+        </div>
+    </section>
+    <section>
+        <div class="demo">
+        </div>
+    </section>
+</body>
+<script>
+    var core = document.getElementById("core").addEventListener("mouseenter", COREDEF)
+    function COREDEF() {
+        var demo = document.querySelector(".demo").innerHTML = "The core of the GreenSock Animation Platform (GSAP) is a single JavaScript file that animates any property of any object. GSAP is a high-speed property manipulator that updates values over time with high accuracy. It's up to 20 times faster than jQuery"
+    }
+    var scroll = document.getElementById("scroll").addEventListener("mouseenter", scrollDEF)
+    function scrollDEF() {
+        var demo = document.querySelector(".demo").innerHTML = "ScrollTrigger is a plugin for GSAP, which is a popular way to add scroll-based animations to websites"
+    }
+    var svg = document.getElementById("svg").addEventListener("mouseenter", svgDEF)
+    function svgDEF() {
+        var demo = document.querySelector(".demo").innerHTML = "GSAP can handle most CSS properties, such as stroke, strokeWeight, fill, and fillOpacity. To animate attributes, you can use the built-in AttrPlugin, which can handle any numeric attribute."
+    }
+    var ui = document.getElementById("ui").addEventListener("mouseenter", uiDEF)
+    function uiDEF() {
+        var demo = document.querySelector(".demo").innerHTML = "GSAP can be used to change the properties of objects over time, which specifies how the UI looks. For example, GSAP can be used to create a UI for a game where the user drags coins into bowls on a balance scale"
+    }
+    var text = document.getElementById("text").addEventListener("mouseenter", textDEF)
+    function textDEF() {
+        var demo = document.querySelector(".demo").innerHTML =`The default for GSAP text is "" , which isolates each character. To animate word-by-word, use the space character as the delimiter. For example, gsap.to("#element", { duration: 2, text: { value: "This is the new text", delimiter: " " }, ease: "none" }); replaces word-by-word.`
+    }
+
+
+
+</script>
+
+</html>
